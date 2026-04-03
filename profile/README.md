@@ -1,9 +1,6 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=venom&height=180&color=0:0f172a,50:0ea5e9,100:a855f7&text=Auriti%20Labs&fontColor=ffffff&fontSize=44&fontAlignY=45&animation=fadeIn" />
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=venom&height=180&color=0:e2e8f0,50:0ea5e9,100:a855f7&text=Auriti%20Labs&fontColor=0f172a&fontSize=44&fontAlignY=45&animation=fadeIn" />
-</picture>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0f172a,50:0ea5e9,100:a855f7&text=Auriti%20Labs&fontColor=ffffff&fontSize=44&fontAlignY=42&section=header" />
 
 <br/>
 
