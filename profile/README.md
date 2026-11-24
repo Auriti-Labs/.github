@@ -38,31 +38,32 @@ SaaS layer    →  Monitoring, history, and team features on top of the engine
 
 The first open-source GEO audit and optimization engine. Based on the [Princeton KDD 2024](https://arxiv.org/abs/2311.09735) research paper + [AutoGEO ICLR 2026](https://arxiv.org/abs/2510.11438) methods.
 
-**15 CLI commands** · **8 scoring categories** · **47 research-backed methods** · **7 output formats** · **1,720 tests** · MIT licensed · [PyPI](https://pypi.org/project/geo-optimizer-skill/) published · [MCP server](https://modelcontextprotocol.io) compatible · [Astro integration](https://astro.build) ready.
+**20 CLI commands** · **9 scoring categories** · **47 content checks** · **12 MCP tools** · **8 output formats** · **2,000+ tests** · MIT licensed · [PyPI](https://pypi.org/project/geo-optimizer-skill/) published · [MCP server](https://modelcontextprotocol.io) compatible · [Astro integration](https://astro.build) ready.
 
 <details>
 <summary><b>Technical deep dive</b></summary>
 <br/>
 
-**Scoring engine** — Weighted 0–100 score across 8 categories:
+**Scoring engine** — Weighted 0–100 readiness score across 9 categories. It measures technical readiness for AI answer engines, not whether an engine will cite you:
 
 | Category | What it checks |
 |---|---|
+| `Google AI` | Eligibility for Google Search AI features: crawling, indexing, snippets |
 | `robots.txt` | AI bot access (GPTBot, ClaudeBot, PerplexityBot, etc.) |
-| `llms.txt` | AI-readable site index — the new `sitemap.xml` for LLMs |
+| `llms.txt` | Proposed convention: a Markdown map of the site for AI agents |
 | `JSON-LD Schema` | Structured data richness and validity |
 | `Meta tags` | SEO signals that AI engines actually parse |
 | `Content quality` | Heading hierarchy, content depth, readability |
 | `AI signals` | Citations, authoritative language, E-E-A-T markers |
 | `AI discovery` | Discoverability across ChatGPT, Perplexity, Claude, Gemini |
-| `Brand coherence` | Consistent entity representation across the site |
+| `Brand & entity` | Consistent entity representation across the site |
 
-**MCP integration** — 11 tools exposed via FastMCP:
-`geo_audit` · `geo_fix` · `geo_llms_generate` · `geo_citability` · `geo_schema_validate` · `geo_compare` · `geo_gap_analysis` · `geo_ai_discovery` · `geo_check_bots` · `geo_trust_score` · `geo_negative_signals` · `geo_factual_accuracy`
+**MCP integration** — 12 tools exposed via FastMCP:
+`geo_audit` · `geo_fix` · `geo_llms_generate` · `geo_citability` · `geo_schema_validate` · `geo_compare` · `geo_gap_analysis` · `geo_ai_discovery` · `geo_check_bots` · `geo_trust_score` · `geo_negative_signals` · `geo_factual_accuracy` · `geo_factual_accuracy`
 
 **Security** — Anti-SSRF hardened. All URLs validated via DNS pinning. Streaming responses with 10MB size limit. No direct `requests.get()` — ever.
 
-**47 citability methods** derived from Princeton + ICLR research for improving AI citation probability.
+**47 content checks**, 9 of them from the Princeton GEO paper (KDD 2024). A high score does not guarantee citations.
 
 **Bonus checks** — CDN crawler access, JS rendering, WebMCP readiness, negative signals (8 anti-citation patterns), prompt injection detection, trust stack score, RAG chunk readiness, content decay prediction, platform citation profiles, multimodal readiness.
 
@@ -71,7 +72,7 @@ The first open-source GEO audit and optimization engine. Based on the [Princeton
 <p>
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/MCP-0ea5e9?style=flat-square" />
-<img src="https://img.shields.io/badge/tests-1720-22c55e?style=flat-square" />
+<img src="https://img.shields.io/badge/tests-2000%2B-22c55e?style=flat-square" />
 <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
 <img src="https://img.shields.io/github/stars/Auriti-Labs/geo-optimizer-skill?style=flat-square&color=0ea5e9" />
 <img src="https://img.shields.io/github/forks/Auriti-Labs/geo-optimizer-skill?style=flat-square&color=0ea5e9" />
@@ -120,7 +121,7 @@ graph LR
 - **Local first** — Your data stays on your machine. Zero telemetry, zero cloud dependencies in the CLI.
 - **Research-backed** — We implement peer-reviewed methods (Princeton KDD, ICLR), not blog post hype.
 - **MCP native** — The engine speaks [Model Context Protocol](https://modelcontextprotocol.io). Plug into any AI assistant.
-- **Production grade** — 1,720 tests, SSRF protection, CI/CD integration, SARIF + JUnit output. Not demos — infrastructure.
+- **Production grade** — 2,000+ tests, SSRF protection, CI/CD integration, SARIF + JUnit output. Not demos — infrastructure.
 
 ---
 
